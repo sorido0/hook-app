@@ -8,14 +8,16 @@ import ReactDOM from 'react-dom/client';
 // import { MulplesHooks } from './components/03-ejemplos/MulplesHooks';
 // import { FocusInput } from './components/04-useRef/FocusInput';
 // import { RealEjemploRef } from './components/04-useRef/RealEjemploRef';
-import { Layout } from './components/05-useLaiyout/Layout';
+// import { Layout } from './components/05-useLaiyout/Layout';
+// import { Memoria } from './components/06-memo/Memoria';
+import { MemoHooks } from './components/06-memo/MemoHooks';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Layout />
+    <MemoHooks />
   </>
 );
 
