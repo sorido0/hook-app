@@ -10,15 +10,19 @@ import ReactDOM from 'react-dom/client';
 // import { RealEjemploRef } from './components/04-useRef/RealEjemploRef';
 // import { Layout } from './components/05-useLaiyout/Layout';
 // import { Memoria } from './components/06-memo/Memoria';
-import { MemoHooks } from './components/06-memo/MemoHooks';
+// import { MemoHooks } from './components/06-memo/MemoHooks';
+// import { CallMemo } from './components/06-memo/CallMemo';
+// import { Padre } from './components/07-tarea-memo/Padre';
+
+import './components/08-useReduces/Intro-reduser';
 
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <>
-    <MemoHooks />
-  </>
-);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <>
+//     <Padre />
+//   </>
+// );
 
 
