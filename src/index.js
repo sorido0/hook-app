@@ -14,15 +14,17 @@ import ReactDOM from 'react-dom/client';
 // import { CallMemo } from './components/06-memo/CallMemo';
 // import { Padre } from './components/07-tarea-memo/Padre';
 
-import './components/08-useReduces/Intro-reduser';
+// import './components/08-useReduces/Intro-reduser';
+
+import { AppReducer } from './components/08-useReduces/usoReducer';
 
 
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <>
-//     <Padre />
-//   </>
-// );
+const root = ReactDOM.createRoot(document.getElementById('root'));
+ root.render(
+   <>
+     <AppReducer />
+   </>
+ );
 
 
