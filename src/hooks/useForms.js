@@ -13,6 +13,10 @@ export const useForms = (valoresIniciales = {} ) => {
         })
     }
 
-    return [Forms, handleInput];
+    const formsRecet = () => {
+        setForms(valoresIniciales)
+    }
+
+    return { ...Forms, setForms, handleInput, formsRecet };
 
 }

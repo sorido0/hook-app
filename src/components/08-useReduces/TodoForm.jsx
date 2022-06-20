@@ -1,27 +1,46 @@
 import React from 'react'
 import { useForms } from '../../hooks/useForms';
 
-export const TodoForm = () => {
+export const TodoForm = ( { nuevoState } ) => {
 
-    const { Forms, handleInput } = useForms();    
-    const addNewTodos = (e) => {
+    const {  Descripcion, handleInput, formsRecet } = useForms(
+        {   
+            Descripcion: ''
+        }
+    );
+        
+    const envioFormulario = (e) => {
+        
         e.preventDefault();
-        console.log('todo form');
+
+        if(Descripcion.length <= 1 ) return;
+
+        const newState = {
+            id: new Date().getTime(),
+            Descripcion: Descripcion,
+            Completado: false,
+        }
+
+        nuevoState(newState);
+        console.log(Descripcion);
     }
 
     return (
         <>
-            <form >
+            <form onSubmit={ envioFormulario }>
                 <input
                     type="text"
                     placeholder='Que aremos?'
                     className='form-control'
+                    name='Descripcion'
+                    value={ Descripcion }
+                    onChange={ handleInput }
                 />
 
                 <button
                     type='submit'
                     className='btn btn-primary mt-2'
-                    onClick={addNewTodos}>
+                    >
                     Agregar
                 </button>
             </form>

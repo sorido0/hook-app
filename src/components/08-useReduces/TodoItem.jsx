@@ -1,4 +1,4 @@
-export const TodoItem = ({state}) => {
+export const TodoItem = ({ state }) => {
     return (
         <>
             <li
