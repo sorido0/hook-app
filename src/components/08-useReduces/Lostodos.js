@@ -1,3 +1,8 @@
+
+
+
+//Estado iniciar de los todos,  estan rederizado en un componente
+//y se actualizan cuando se hace un cambio en el estado
 export const Lostodos = () => {
     const estadoIniciar = [
         {
