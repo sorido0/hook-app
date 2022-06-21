@@ -4,11 +4,10 @@
 
 export const todoReducer = (estadoIniciar = [], action ) => {
   
-
+    console.log(action)
     switch (action.type) {
         case 'agregar':
-            
-            throw new Error(" Aun no la action no esta creada");;
+            return [...estadoIniciar, action.descripcion]
     
         default:
             return estadoIniciar;

@@ -23,17 +23,23 @@ export const TodoApp = () => {
     const [todos, dispatch] = useReducer(todoReducer, estadoIniciar);
     
     const handleNewTodo = (todo) => {
-        console.log( { todo } )
+        const action = {
+            type: 'agregar',
+            descripcion: todo,
+        }
+
+        dispatch( action );
+        console.log(todo);
     }
     return (
         <>
             <h1> Tareas: 10 <small> pendientes: 2 </small> </h1>
             <hr />
 
-            <div class="row">
+            <div className="row">
                 <div className="col-7">
                     {/* TodosList */}
-                    <TodosList todos={todos} />
+                    <TodosList todos={ todos } />
                     {/* Fin TodosList */}
                 </div>
 

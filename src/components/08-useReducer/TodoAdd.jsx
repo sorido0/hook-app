@@ -6,9 +6,6 @@ import { useForms } from '../../hooks/useForms'
 {/* Fin TodoAdd*/ }
 
 
-
-
-
 export const TodoAdd = ( {unNuevoTodo} ) => {
     
     const { descripcion, handleInput, formsRecet} = useForms({
