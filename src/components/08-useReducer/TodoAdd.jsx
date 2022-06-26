@@ -1,9 +1,6 @@
 import React from 'react'
 import { useForms } from '../../hooks/useForms'
 
-{/* TodoAdd unNuevoTodo(todos)*/ }
-{/* { id, descripcion ,done }*/ }
-{/* Fin TodoAdd*/ }
 
 // Este es el componente que se importa en el componente TodoApp.jsx
 // Este componente se encarga de agregar una nueva tarea.

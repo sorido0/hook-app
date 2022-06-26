@@ -13,7 +13,7 @@ export const useContador = ( inicia = 10 ) => {
     }
 
     const Reiniciar = () => {
-        setContador(0);
+        setContador(inicia);
     }
 
   return { Sumar, Restar, Reiniciar, contador }; 

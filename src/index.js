@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 // import { FormsHooks } from './components/02-useEffect/FormsHooks';
 //import { Hookapp } from './Hookapp';
 // import { ContadorApp } from './components/01-useState/ContadorApp';
@@ -15,16 +16,21 @@ import ReactDOM from 'react-dom/client';
 // import { Padre } from './components/07-tarea-memo/Padre';
 // import './components/08-useReducer/intro-reduser';
 //import { AppReducer } from './components/08-useReduces/usoReducer';
+//import { TodoApp } from './components/08-useReducer/TodoApp';
 
-import { TodoApp } from './components/08-useReducer/TodoApp';
+
+import { MainPage } from './components/09-useContext/MainPage';
 //
 import './index.css';
 
- const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <BrowserRouter>
     <>
-      <TodoApp />
+      <MainPage />
     </>
-  );
+  </BrowserRouter>
+
+);
 
 

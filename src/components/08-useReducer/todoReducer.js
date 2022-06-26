@@ -11,6 +11,20 @@ export const todoReducer = (estadoIniciar = [], action ) => {
         case 'agregar':
             // se envia el estado actual con expres (...) y la accion que se va a realizar agregando una nueva todo o tarea.
             return [...estadoIniciar, action.descripcion]
+        // Si la accion es eliminar una todo o tarea.
+        case 'eliminar':
+            return estadoIniciar.filter( todo => todo.id !== action.descripcion);
+        // Si la accion es completada una todo o tarea.
+        case 'completada':
+            return estadoIniciar.map( todo => {
+                if(todo.id === action.descripcion){
+                    return {
+                        ...todo,
+                        done: !todo.done
+                    }
+                }
+                return todo;
+            });
     
         default:
             // Si no se cumple ninguna de las condiciones anteriores, se retorna el estado actual.
