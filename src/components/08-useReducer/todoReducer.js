@@ -5,7 +5,7 @@
 export const todoReducer = (estadoIniciar = [], action ) => {
   
     // console.log(action); Para como esta formada la accion.
-    console.log(action)
+    //console.log(action)
     switch (action.type) {
         // Si la accion es agregar una todo o tarea. 
         case 'agregar':

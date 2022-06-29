@@ -6,17 +6,19 @@ export const useForms = (valoresIniciales = {} ) => {
     const [Forms, setForms] = useState(valoresIniciales);
 
 
-    const handleInput = (e) => {
+    const handleInput = ( {target} ) => {
+        const { name, value } = target;
         setForms({
             ...Forms,
-            [e.target.name]: e.target.value
-        })
-    }
+            [ name ]: value
+        });
+    };
 
+    //==========console.log(Forms);
     const formsRecet = () => {
         setForms(valoresIniciales)
     }
 
-    return { ...Forms, setForms, handleInput, formsRecet };
+    return { ...Forms, Forms, handleInput, formsRecet };
 
 }

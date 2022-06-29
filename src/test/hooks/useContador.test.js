@@ -17,12 +17,12 @@ describe('Pruebas en el contador', () => {
         // con esto podemos ver los valores por defecto
         //console.log(resultado.result.current);
 
-        console.log(contador);
+        //--------------------------------------------console.log(contador);
         // Debe retornar el valor por defecto
         expect(contador).toBe(10);
         // Debe retornar validar que Sumar sea una Funcion con el expect.any() para validar que sea una funcion
         expect(Sumar).toEqual(expect.any(Function));
-        console.log(Sumar);
+        //-------------------------------------------console.log(Sumar);
         // Debe retornar validar que Sumar sea una Funcion con el expect.any() para validar que sea una funcion
         expect(Restar).toEqual(expect.any(Function));
         // Debe retornar validar que Sumar sea una Funcion con el expect.any() para validar que sea una funcion
@@ -63,7 +63,7 @@ describe('Pruebas en el contador', () => {
         });
 
         // Antes de hacer el test debe validar que el valor del contador que sea el valor inicial 
-        console.log(result.current.contador);
+        //=========================================console.log(result.current.contador);
         expect(result.current.contador).toBe(100);
 
     })

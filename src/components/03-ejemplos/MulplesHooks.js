@@ -1,41 +1,49 @@
 import React from 'react'
+import { useFetch, useContador } from './../../hooks/';
 
 import '../02-useEffect/useEfecct.css';
-import { useFetch } from './../../hooks/useFetch';
-import { useContador } from './../../hooks/useContador';
+import { Loading } from './Loading';
+import { Quote } from './Quote';
 
 export const MulplesHooks = () => {
 
-    const { Sumar, contador } = useContador(1);
+  //importamos el hook useFetch
+  const { Sumar, contador } = useContador(1);
 
-    const { loading, data} = useFetch(`https://www.breakingbadapi.com/api/quotes/${ contador }`);
+  // importamos el hook useFetch y lo desestructuramos
+  const {  data, isloading, error } = useFetch(`https://www.breakingbadapi.com/api/quotes/${contador}`);
 
-    const { author, quote } = !!data && data[0];
-    console.log(author, quote);
+  // si hay un error lo mostramos
+  //================================================================console.log({ data, isloading, error });
+
+  // Valido que exista la data
+  const { author, quote } = !!data && data[0];
+
+  // si hay un error lo mostramos
+  //================================================================console.log({ data, isloading, error });
+
+  //==========================================================================console.log(author, quote);
   return (
     <>
-        <h1> breaking badapi Quotes</h1>
-        <hr />
+      <h1> breaking badapi Quotes</h1>
+      <hr />
 
-        {
-          loading 
-          ? 
-            (	
-              <div className='alert alert-info text-center'> 
-              Loadig... 
-              </div>
-            )
-          :
-            (       
-              <blockquote className='blockquote text-right'>
-                <p className='mb-1'> { quote } </p>
-                <footer className='blockquote-footer'> { author }</footer>
-              </blockquote>
-            )
-        }
 
-        <button className='btn btn-primary' onClick={ Sumar }> next quote </button>
-    </>  
-    
+      {
+        // si islading es true no se muestra. 
+        isloading ?
+        (
+         <Loading />
+        )
+        :
+        // si lo isloading es false se muestra el contenido
+        (
+          <Quote author={ author } quote={ quote }  />
+        )
+      }
+      
+      <button className='btn btn-primary' onClick={Sumar} disabled={ isloading }> next quote </button>
+    </>
+
   )
 }
